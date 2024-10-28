@@ -7,7 +7,19 @@
 
 
 .slide {
-    @apply relative w-full h-2 bg-neutral-lgrayishblue rounded-full mt-6 before:absolute before:
+    @apply relative w-full h-2 bg-neutral-lgrayishblue rounded-full mt-6 
+}
+
+.slide::before {
+    @apply content-[''] absolute bg-primary-strongcyan h-full w-2/5 rounded-full
+}
+
+.slide::after {
+    @apply absolute content-[''] left-0 right-0
+}
+
+.toggle {
+    @apply text-neutral-lgrayishbluetbg rounded-full w-12  h-6
 }
 
 .billing {
@@ -19,4 +31,5 @@
 }
 
 .btn {
-    @apply text-primary-paleblue text-sm font-medium bg-neutral-dsaturatedblue rounded-full text-center px-
+    @apply text-primary-paleblue text-sm font-medium bg-neutral-dsaturatedblue rounded-full text-center px-4 py-2
+}

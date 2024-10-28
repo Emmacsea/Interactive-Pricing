@@ -5,8 +5,13 @@ import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 
 export default function Pricing() {
     const [toggle, setToggle] = useState(false);
+    const [togglebg, setTogglebg] = useState(false);
+    
 
-    const handleToggle = () => setToggle((prev) => !prev)
+    const handleToggle = () => {
+      setToggle((prev) => !prev);
+      setTogglebg(togglebg);
+    }
 
   return (
     <div className="font-body bg-back-image bg-cover bg-center h-screen w-full flex justify-center items-start">
@@ -26,16 +31,18 @@ export default function Pricing() {
                 <p className="text-neutral-dsaturatedblue text-3xl font-bold flex justify-center items-center">$16.00 <span className="text-neutral-grayishblue text-sm font-semibold">/month</span></p>
             </div>
 
-            <div className="slide"></div>
+            <div className="slide">
+              <div className="rounded-full w-7 h-7 bg-primary-strongcyan absolute top-0 left-1/2 transform -translate-x-10 -translate-y-3 bottom-0 z-10 flex justify-center items-center"><img src={slider} alt="" /></div>
+            </div>
 
-            <div className="flex space-x-3 justify-center items-center mt-6 ">
+            <div className="flex justify-center items-center mt-6 ">
                 <p className="billing">Monthly Biling </p>
                 <div onClick={handleToggle} className="cursor-pointer">
-                {toggle ? 
-                (<FaToggleOn className="bg-neutral-lgrayishbluetbg rounded-full w-11 text-neutral-white h-6"/>)
-                : 
-                (<FaToggleOff className="bg-neutral-lgrayishbluetbg rounded-full w-11 text-neutral-white h-6"/>)
-                }
+                {toggle ? (
+                  <FaToggleOn className={`toggle ${togglebg ? ("bg-primary-strongcyan text-neutral-white") : ("bg-neutral-white") }`} />
+                ) : (
+                  <FaToggleOff className={`toggle`} />
+                )}
                 </div>
                 <div className="flex space-x-2 items-center">
                 <p className="billing">Yearly Biling </p>
