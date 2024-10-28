@@ -10,11 +10,11 @@ export default function Pricing() {
 
     const handleToggle = () => {
       setToggle((prev) => !prev);
-      setTogglebg(togglebg);
+      setTogglebg(!togglebg);
     }
 
   return (
-    <div className="font-body bg-back-image bg-cover bg-center h-screen w-full flex justify-center items-start">
+    <div className="font-body bg-back-image bg-cover bg-center h-1/2 w-full flex justify-center items-start">
       <div className="flex flex-col justify-center items-center w-96">
         <div className="flex flex-col space-y-3 items-center mt-20">
           <h3 className="text-neutral-dsaturatedblue text-2xl font-bold ">
@@ -31,8 +31,8 @@ export default function Pricing() {
                 <p className="text-neutral-dsaturatedblue text-3xl font-bold flex justify-center items-center">$16.00 <span className="text-neutral-grayishblue text-sm font-semibold">/month</span></p>
             </div>
 
-            <div className="slide">
-              <div className="rounded-full w-7 h-7 bg-primary-strongcyan absolute top-0 left-1/2 transform -translate-x-10 -translate-y-3 bottom-0 z-10 flex justify-center items-center"><img src={slider} alt="" /></div>
+            <div className="slide cursor-pointer">
+              <div className="rounded-full cursor-pointer w-7 h-7 bg-primary-strongcyan absolute top-0 left-1/2 transform -translate-x-10 -translate-y-3 bottom-0 z-10 flex justify-center items-center"><img src={slider} alt="" /></div>
             </div>
 
             <div className="flex justify-center items-center mt-6 ">
